@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Vue.js Sample</title>
-  <link rel="stylesheet" href="./css/bulma.min.css">
+  <link rel="stylesheet" href="index.css">
 </head>
+
+
 <body>
-  <div class="container main">
-    <div class="columns section">
-      <div class="column">
-        <h1 class="title is-4">Vue.js Sample</h1>
-        <hr>
-
-        <div id="app">
-
-        </div>
-
-    </div>
+  <div id="editor">
+    <textarea :value="input" @input="update"></textarea>
+    <div v-html="compiledMarkdown"></div>
   </div>
-</div>
+  <script src="https://unpkg.com/marked@0.3.6"></script>
+  <script src="https://unpkg.com/lodash@4.16.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="App.js"></script>
 </body>
+
 </html>
